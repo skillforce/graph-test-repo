@@ -1,0 +1,35 @@
+.graph {
+    height: 358px;
+    width: 564px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 53px;
+}
+
+.header-title {
+    color: #000000;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-left: 16px;
+}
+
+.header-img-block{
+    margin-right: 24.27px;
+    margin-top: 3px;
+}
+
+.header-img-block img{
+    height: 24px;
+    width: 24px;
+}
