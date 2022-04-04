@@ -1,0 +1,8 @@
+.customized-tick-y {
+    color: #485465;
+    font-family: "SF UI Text";
+    font-size: 10px;
+    letter-spacing: 0.12px;
+    line-height: 12px;
+    text-align: right;
+}

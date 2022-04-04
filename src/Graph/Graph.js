@@ -5,42 +5,50 @@ import leftArrow from '../img/leftArrow.png'
 import {GraphTable} from "./GraphTable/GraphTable";
 
 
-
-
 const Graph = () => {
 
-    const[graphTableData, setGraphTableData]= useState([])
+    const [graphTableData, setGraphTableData] = useState([])
     const dataTable = [
         {
-            name: '12/23/22-12/30/22',
-            pv: 0,
+            DateFrom: "2022-03-07",
+            DateTo: "2022-03-13",
+            Count: 2
         },
         {
-            name: '01/01/22-01/08/22',
-            pv: 38,
+            DateFrom: "2022-03-14",
+            DateTo: "2022-03-21",
+            Count: 12
         },
         {
-            name: '01/08/22-01/16/22',
-            pv: 34,
+            DateFrom: "2022-03-22",
+            DateTo: "2022-03-28",
+            Count: 18
         },
         {
-            name:  '01/17/22-01/24/22',
-            pv: 33,
+            DateFrom: "2022-03-29",
+            DateTo: "2022-04-07",
+            Count: 25
         },
         {
-            name:  '01/25/22-02/02/22',
-            pv: 40,
+            DateFrom: "2022-03-07",
+            DateTo: "2022-03-13",
+            Count: 12
         },
         {
-            name:  '02/02/22-02/09/22',
-            pv: 30,
+            DateFrom: "2022-03-14",
+            DateTo: "2022-03-21",
+            Count: 18
         },
     ];
 
 
-    useEffect(()=>{
-        setGraphTableData(dataTable)
-    },[])
+    const ticksXAxis = dataTable.map(t => ({name:`${t.DateFrom},${t.DateTo}`, Count:t.Count}))
+    const xAxisTicks =ticksXAxis.map(t=>t.name).slice(1,-1)
+
+
+        useEffect(() => {
+            setGraphTableData(ticksXAxis)
+        }, [])
 
     return (
         <div className={'graph'}>
@@ -51,7 +59,7 @@ const Graph = () => {
                     <img src={rightArrow} alt="rightArrow"/>
                 </div>
             </div>
-            <GraphTable data={graphTableData} />
+            <GraphTable data={graphTableData} xAxisTicks={xAxisTicks}/>
         </div>
     );
 };
